@@ -21,8 +21,8 @@ def merge_workbooks(input_folder, output_file):
     merged_wb.save(output_file)
 
 # Example usage
-input_folder = "G:\\My Drive\\~~Scratchpad\\milsbibs202404_todo"
-output_file = "G:\\My Drive\\~~Scratchpad\\milsbibs202404_done\\BibCountCombined_202404.xlsx"
+input_folder = "G:\\Shared drives\\MILS -- MIN\\Statistics\\2024\\BibCounts\\milsbibs2024_todo"
+output_file = "G:\\Shared drives\\MILS -- MIN\\Statistics\\2024\\BibCounts\\milsbibs2024_done\\BibCountCombined_2024.xlsx"
 merge_workbooks(input_folder, output_file)
 
 
