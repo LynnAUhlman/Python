@@ -1,4 +1,12 @@
 STEPS
-Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
-The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
-NOT COMPLETE
+1.  Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
+2.  The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
+3.  Put the files into the milsbibs2024_todo folderas .xlsx files.
+4.  Open Anaconda
+5.  Switch the file path to the upper folder where the mergeBibCounts.py script is located:
+    cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\BibCounts"
+6.  call the script:
+    python mergeBibCounts.py
+7.  
+
+\* NOT COMPLETE */
