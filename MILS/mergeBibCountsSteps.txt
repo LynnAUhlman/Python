@@ -1,0 +1,3 @@
+STEPS
+Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
+The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
