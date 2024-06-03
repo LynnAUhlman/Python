@@ -15,7 +15,7 @@
     ---If there are no errors, the script will print messages noting what it is doing:
         Merging files...
         Files Merged...
---Once the Files have been merged, copy the template (BibCount2024.xlsx) adding the numeric mmdd (month day) after the year (no splaces).
+--Once the Files have been merged, copy the template (Bib Counts 2024.xlsx) adding the numeric mmdd (month day) after the year (no spaces in the yearmonthday).
 --Copy the data from the BibCountCombined_2024.xlsx file and paste into the Bib Counts sheet in the workbook created in step 8.
 --Double check the #s to make sure all current libraries have data present and that the numbers aren't drastically off.
 --Once the quality check is complete, upload into the Polaris Reports Manager at https://mils.polarislibrary.com/reports/browse/. File path: Polaris>Custom>MILS Top Hits>Bib Counts
