@@ -10,12 +10,7 @@
 --once the files are converted to .txt
 --call the script:  \* switches the files to .xlsx format*/ 
     python convert_txt_to_xlsx.py
---call the script:  \* merges the files into one .xlsx worksheet */ 
-    python mergeBibCounts.py
-    ---If there are no errors, the script will print messages noting what it is doing:
-        Merging files...
-        Files Merged...
---Once the Files have been merged, copy the template (Bib Counts 2024.xlsx) adding the numeric mmdd (month day) after the year (no spaces in the yearmonthday).
---Copy the data from the BibCountCombined_2024.xlsx file and paste into the Bib Counts sheet in the workbook created in step 8.
+--Once the Files have been converted, clean up sheets and save.
 --Double check the #s to make sure all current libraries have data present and that the numbers aren't drastically off.
---Once the quality check is complete, upload into the Polaris Reports Manager at https://mils.polarislibrary.com/reports/browse/. File path: Polaris>Custom>MILS Top Hits>Bib Counts
+--Once the quality check is complete, upload into the Polaris Reports Manager at https://mils.polarislibrary.com/reports/browse/. File path: Polaris>Custom>MILS Top Hits> and their corresponding folder
+--Move the files in the 2024 folder into their corresponding folders in Google Drive (Shared drives>MILS--MIN>Statistics>2024>ItemCounts/PatronCounts/Shelf Location Statistics, etc.).
