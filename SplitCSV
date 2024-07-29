@@ -1,0 +1,16 @@
+import pandas as pd
+
+def split_csv(input_file, rows_per_file):
+    chunk_size = rows_per_file  # Number of rows per split file
+
+    # Create an iterator that reads the input file in chunks
+    reader = pd.read_csv(input_file, chunksize=chunk_size)
+
+    # Iterate through each chunk and write it to a new CSV file
+    for i, chunk in enumerate(reader):
+        output_file = f'output_part_{i+1}.csv'
+        chunk.to_csv(output_file, index=False)
+        print(f'Created {output_file}')
+
+# Example usage
+split_csv('[insert file path', 10000)  # Adjust the first parameter to the large file and the second parameter to the desired number of rows per file
