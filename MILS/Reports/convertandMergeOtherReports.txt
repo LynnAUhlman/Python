@@ -6,11 +6,13 @@ UNDER CONSTRUCTION
 --Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
 --The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
 
---Put the files into the FLIP_XSL_TO_TXT FOLDER
+--Put the files into the FLIP FOLDER
 --Change the extension to .txt using the .bat
 --Open Anaconda
 --Switch the file path to the upper folder where the change_file_extension and convert_txt_to_xlsx.py scripts are located:
     cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\"
+--call the script:  \* switches the files to .xls to .txt format*/
+    change_file_extension.py
 --call the script:  \* switches the files to .xlsx format*/ 
     python convert_txt_to_xlsx.py
 --Once the Files have been converted, clean up sheets and save.
