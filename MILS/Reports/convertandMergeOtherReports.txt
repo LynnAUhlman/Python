@@ -12,7 +12,7 @@ UNDER CONSTRUCTION
 --Switch the file path to the upper folder where the change_file_extension and convert_txt_to_xlsx.py scripts are located:
     cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\"
 --call the script:  \* switches the files to .xls to .txt format*/
-    change_file_extension.py
+    python change_file_extension.py
 --call the script:  \* switches the files to .xlsx format*/ 
     python convert_txt_to_xlsx.py
 --Once the Files have been converted, clean up sheets and save.
