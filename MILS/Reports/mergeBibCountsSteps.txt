@@ -1,26 +1,57 @@
-===STEPS===
---Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
---The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
---Put the files into the milsbibs2024_txt folder.
---Open Anaconda
---Switch the file path to the upper folder where the mergeBibCounts.py script is located:
-    cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\BibCounts"
---call the script: \* switches the extension from .xls to .txt which it is actually formatted as. this allows the following scripts to work correctly */
-    python change_file_extension.py
---once the files are converted to .txt
---call the script:  \* switches the files to .xlsx format*/ 
-    python convert_txt_to_xlsx.py
---call the script:  \* merges the files into one .xlsx worksheet */ 
-    python mergeBibCounts.py
-    ---If there are no errors, the script will print messages noting what it is doing:
-        Merging files...
-        Files Merged...
---Once the Files have merged, copy the template (Bib Counts 2024.xlsx) adding the numeric mmdd (month day) after the year (no spaces in the yearmonthday).
---Copy the data from the BibCountCombined_2024.xlsx file and paste into the Bib Counts sheet in the workbook created in step 8.
---Double check the #s to make sure all current libraries have data present and that the numbers aren't drastically off.
---Once the quality check is complete, upload into the Polaris Reports Manager at https://mils.polarislibrary.com/reports/browse/. File path: Polaris>Custom>MILS Top Hits>Bib Counts
+===Steps===
 
-CALLS:
+1) Retrieve Files
+Navigate to SimplyReports > My Reports > File Maintenance > Scheduled Reports Files using the minhq-reports login.
+Ensure the file names follow this format:
+[Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss].xls
+Example: Count Bibs jam_5_1_2024_4_0_14.xls.
+
+2) Move Files
+Place the retrieved files into the milsbibs2024_txt folder.
+
+3) Open Anaconda
+Change the working directory to the location of the mergeBibCounts.py script:
+cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\BibCounts"
+
+4) Convert File Extensions
+Run the script to change file extensions from .xls to .txt (the actual file format):
 python change_file_extension.py
+
+5) Convert to .xlsx Format
+Run the script to convert .txt files to .xlsx format:
 python convert_txt_to_xlsx.py
+
+6) Merge Files
+Run the script to merge the .xlsx files into one combined worksheet:
+python mergeBibCounts.py
+
+The script will print progress messages, such as:
+Merging files...
+Files Merged...
+
+7)Prepare the Final Workbook
+Copy the template file Bib Counts 2024.xlsx.
+Rename the file, appending the numeric date (MMDD) to the year (e.g., Bib Counts 20240501.xlsx).
+
+8)Copy Data
+Open BibCountCombined_2024.xlsx and copy the data to the Bib Counts sheet in the newly created workbook.
+
+9) Quality Check
+Verify that all libraries have data present.
+Check for accuracy and ensure there are no drastic anomalies in the numbers.
+
+10)Upload the Final File
+Upload the completed workbook to the Polaris Reports Manager:
+URL: https://mils.polarislibrary.com/reports/browse/
+Path: Polaris > Custom > MILS Top Hits > Bib Counts.
+
+===Commands===
+
+•Change file extensions:
+python change_file_extension.py
+
+•Convert files to .xlsx:
+python convert_txt_to_xlsx.py
+
+•Merge files:
 python mergeBibCounts.py
