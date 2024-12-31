@@ -3,7 +3,7 @@
 1) Retrieve Files
 Navigate to SimplyReports > My Reports > File Maintenance > Scheduled Reports Files using the minhq-reports login.
 Ensure the file names follow this format:
-[Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss].xls
+[Count Bibs][ ][librarycode][_m_d_yyyy_h_m_ss].xls
 Example: Count Bibs jam_5_1_2024_4_0_14.xls.
 
 2) Move Files
