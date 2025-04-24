@@ -2,20 +2,47 @@
 UNDER CONSTRUCTION
 ==============================
 
-===STEPS===
+===STEP 1 - Pull files from SimplyReports===
 --Grab the files from SimplyReports>My Reports>File Maintenance>Scheduled reports files using minhq-reports login.
---The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs jam_5_1_2024_4_0_14_.xls)
+--The file names should all look like the following: [Count Bibs][ ][librarycode][_m_d_yyy_h_m_ss][.xls] jam_5_1_2024_4_0_14_.xls (example:Count Bibs par_5_1_2024_4_0_14_.xls)
 
---Put the files into the FLIP FOLDER
---Change the extension to .txt using the .bat
---Open Anaconda
---Switch the file path to the upper folder where the change_file_extension and convert_txt_to_xlsx.py scripts are located:
-    cd /d "G:\Shared drives\MILS -- MIN\Statistics\2024\"
---call the script:  \* switches the files to .xls to .txt format*/
+===STEP 2 - Adjust py files to reflect updated folders===
+--Open the change_file_extension.py script. Path G:\Shared drives\MILS -- MIN\Bib Counts
+--Adjust the change_file_extension.py script to reflect the folder where the files are located. Save.
+    Example: directory = r"G:\Shared drives\MILS -- MIN\Bib Counts\202502"
+
+--Open the convert_txt_to_xlsx.py file. Path G:\Shared drives\MILS -- MIN\Bib Counts
+--Adjust the convert_txt_to_xlsx.py script to reflect the folder where the files are located. 
+--Adjust the convert_txt_to_xlsx.py script to reflect the folder where the files should be output.
+
+===STEP 3 - Open Anaconda===
+--Switch the file path to the  folder where the change_file_extension.py and convert_txt_to_xlsx.py files are located:
+    cd /d "G:\Shared drives\MILS -- MIN\Bib Counts"
+
+===STEP 4 - extension from .xls to .txt===
+--call the script:  \* switches the files from .xls to .txt extension*/
     python change_file_extension.py
---call the script:  \* switches the files to .xlsx format*/ 
+
+===STEP 5 - extension from .txt to .xlsx===
+--call the script:  \* switches the files from .txt to .xlsx extension*/
     python convert_txt_to_xlsx.py
---Once the Files have been converted, clean up sheets and save.
---Double check the #s to make sure all current libraries have data present and that the numbers aren't drastically off.
---Once the quality check is complete, upload into the Polaris Reports Manager at https://mils.polarislibrary.com/reports/browse/. File path: Polaris>Custom>MILS Top Hits> and their corresponding folder
---Move the files in the 2024 folder into their corresponding folders in Google Drive (Shared drives>MILS--MIN>Statistics>2024>ItemCounts/PatronCounts/Shelf Location Statistics, etc.).
+
+===STEP 6 - PowerBI
+--Move the .txt files into a folder
+--In PowerBI, ingest the .xlsx workbooks from the folder>> Get Data>Folder
+Create a Matrix visual:
+    rows: ItemBranchName
+    columns:MARCTOMDescription
+    values:Sum of NumberOfItems
+--Once the visual has compiled, click the elipses to export the data to a .csv. This exports a file of summaries for all the library counts of each TOM.
+
+STEP 7 - Excel
+--In Excel open the .csv file and in a new sheet insert a PivotTable. Use the data from the other sheet as the data range for the PivotTable.
+--Create the PivotTable criteria:
+    rows: ItemBranchName
+    columns:MARCTOMDescription
+    values:Sum of NumberOfItems
+--Save the file as an .xslx
+
+STEP 8 - Polaris Reports Manager
+--Upload the final .xslx to the Polaris Reports Manager
