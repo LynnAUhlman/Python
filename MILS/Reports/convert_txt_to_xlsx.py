@@ -1,14 +1,17 @@
 import pandas as pd
 import os
+import time
 
 def txt_to_xlsx(txt_file, xlsx_file):
-    # Read the .txt file into a DataFrame
-    df = pd.read_csv(txt_file, delimiter='\t')  # Adjust delimiter if needed
+    try:
+        # Read the .txt file into a DataFrame
+        df = pd.read_csv(txt_file, delimiter='\t')  # Adjust delimiter if needed
 
-    # Write the DataFrame to an .xlsx file
-    df.to_excel(xlsx_file, index=False)
-
-    print(f"Converted {txt_file} to {xlsx_file}")
+        # Write the DataFrame to an .xlsx file
+        df.to_excel(xlsx_file, index=False)
+        print(f"Converted {txt_file} to {xlsx_file}")
+    except Exception as e:
+        print(f"Error converting {txt_file} to {xlsx_file}: {e}")
 
 def batch_update_txt_to_xlsx(input_directory, output_directory):
     # List all .txt files in the input directory
@@ -29,15 +32,19 @@ def batch_update_txt_to_xlsx(input_directory, output_directory):
         # Define the paths for input and output files
         txt_path = os.path.join(input_directory, txt_file)
         xlsx_file = os.path.join(output_directory, os.path.splitext(txt_file)[0] + '.xlsx')
-        
+
         # Convert .txt to .xlsx
         txt_to_xlsx(txt_path, xlsx_file)
 
+    # Wait a moment to ensure all files are released
+    time.sleep(1)
+
+
 # Specify the input directory containing the .txt files
-input_directory = r"G:\Shared drives\MILS -- MIN\Statistics\2024\FLIP"
+input_directory = r"G:\Shared drives\MILS -- MIN\Bib Counts\202503"
 
 # Specify the output directory for the .xlsx files
-output_directory = r"G:\Shared drives\MILS -- MIN\Statistics\2024\OUTPUT"
+output_directory = r"G:\Shared drives\MILS -- MIN\Bib Counts\202503"
 
+# Run the batch update function
 batch_update_txt_to_xlsx(input_directory, output_directory)
-
