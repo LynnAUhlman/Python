@@ -24,9 +24,14 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run your script or make updates
+      - name: Set environment variables
         run: |
-          python your_script.py  # Update or push changes
+          echo "USCB_API_KEY=${{ secrets.USCB_API_KEY }}" >> $GITHUB_ENV
+
+      - name: Run your script
+        run: |
+          python your_script.py  # Your script can now access the API keys via environment variables
+
 
       - name: Commit and push changes
         run: |
